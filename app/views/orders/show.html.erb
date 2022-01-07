@@ -16,13 +16,16 @@
     <th>Image</th>
     <th>Description</th>
     <th>Quantities</th>
+    <th>Price</th>
+
     </tr>
     <% @order.line_items.each do |entry| %>
     <tr>
       <td><%= entry.product.name %></td>
       <td> <%= image_tag entry.product.image, class: 'main-img' %></td>
       <td><%= entry.product.description %></td>
-      <td><%= entry.product.quantity %></td>
+      <td><%= entry.quantity %></td>
+      <td><%= humanized_money_with_symbol entry.total_price_cents/100 %></td>
       <tr/>
       <% end %>
       </table>
