@@ -1,0 +1,2 @@
+class BossmanController < ApplicationController
+end
